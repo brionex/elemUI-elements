@@ -1,0 +1,30 @@
+<div class="box">
+  <span class="box__text">3D</span>
+</div>
+
+<style>
+  .box {
+    width: 90%;
+    height: 90%;
+    display: grid;
+    place-items: center;
+    background-color: #6fa6f9;
+    transition-property: transform, box-shadow;
+    transition-duration: .2s;
+  }
+
+  .box__text {
+    font-family: verdana;
+    font-size: 52px;
+    font-weight: bold;
+    color: #222;
+  }
+
+  .box:hover {
+    transform: translate(-9px, -9px);
+    box-shadow: 
+      1px 1px #222, 2px 2px #222, 3px 3px #222, 
+      4px 4px #222,5px 5px #222, 6px 6px #222, 
+      7px 7px #222, 8px 8px #222, 9px 9px #222;
+  }
+</style>
