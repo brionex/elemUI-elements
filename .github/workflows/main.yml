@@ -1,0 +1,35 @@
+name: Ejecutar main.js en cada push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  modify-file-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+      
+      - name: install dependencies
+        run: npm install --no-optional
+
+      - name: Run main.js
+        run: node ./src/main.js
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add .
+          git commit -m 'Automated file modification'
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
