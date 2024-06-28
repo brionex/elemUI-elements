@@ -25,11 +25,12 @@ jobs:
         run: node ./src/main.js
 
       - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.MI_SECRET }}
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
           git add .
           git commit -m 'Automated file modification'
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/lbrione/elemUI-elements.git
           git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.MI_SECRET }}
