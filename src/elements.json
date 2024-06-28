@@ -14,7 +14,7 @@
   {
     "fileName": "prueba.html",
     "component": "<div class=\"box\">\n  <span>Hola mundo prueba</span>\n</div>",
-    "css": "\n  span {\n    color: red;\n  }\n",
-    "fullContent": "<div class=\"box\">\n  <span>Hola mundo prueba</span>\n</div>\n\n<style>\n  span {\n    color: red;\n  }\n</style>"
+    "css": "\n",
+    "fullContent": "<link rel=\"stylesheet\" href=\"elements.css\">\n\n<div class=\"box\">\n  <span>Hola mundo prueba</span>\n</div>\n\n<style>\n</style>"
   }
 ]
